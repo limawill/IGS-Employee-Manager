@@ -7,7 +7,7 @@ WORKDIR /app/backend
 
 COPY requirements.txt /app/backend/
 
-RUN apk add --virtual .build-deps --no-cache sqlite gcc python3-dev musl-dev && \
+RUN apk add --virtual .build-deps --no-cache sqlite jq gcc python3-dev musl-dev && \
         pip install --no-cache-dir -r requirements.txt && \
         apk --purge del .build-deps
 
